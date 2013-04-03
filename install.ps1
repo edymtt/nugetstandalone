@@ -6,5 +6,5 @@ if (!(Test-Path -path $destinationFolder))
 }
 
 nuget update packages.config -r $destinationFolder
-rd packages -Force -Recurse
+Remove-Item $destinationFolder -Force -Recurse
 nuget install packages.config -o $destinationFolder
