@@ -9,8 +9,8 @@ This little sample shows how to use `Nuget.exe` to install packages and update t
 
 Quick explanation
 -----------------
-The installation works out of the box, just by having the `packages.config` file.
+The installation works out of the box, just by having the `packages.config` file -- `nuget install`will download the library version specified in it.
 
 The update is a little tricky -- we have to let `Nuget` think that it is updating a project, otherwise the update will not start. To achieve this, we insert an empty `csproj` file.
 
-Finally, to have a clean `packages` folder (with only the latest version of NUnit) I simply delete the folder and repeat the installation -- according to `packages.config` the latest version will be installed (copied from local and not downloaded again).
+Finally, to have a clean `packages` folder (with only the latest version of NUnit) I simply delete the folder and repeat the installation -- the update has changed `packages.config` to point to the latest version of the library, so the install will grab it directly (copying it from local and not downloading it again).
